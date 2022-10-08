@@ -9,7 +9,7 @@
 
 </p>
 
-**Feature**:
+**Features**:
 
 - Support multi progress-bars
 - Relative and absolute with
