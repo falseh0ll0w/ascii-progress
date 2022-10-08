@@ -11,10 +11,10 @@
 
 **Features**:
 
-- Support multi progress-bars
-- Relative and absolute with
-- Colorful bar and text
-- Highly customizable
+- Support multi progress-bars.
+- Relative and absolute width.
+- Colorful bar and text.
+- Highly customizable.
 
 
 ![snapshot](snapshot.gif)
