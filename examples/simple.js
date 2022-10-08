@@ -1,14 +1,11 @@
-var ProgressBar = require('../index.js');
+const { ProgressBar } = require('../lib')
 
-var bar = new ProgressBar();
+const bar = new ProgressBar()
 
-
-var iv = setInterval(function () {
-
-  bar.tick();
+const iv = setInterval(function () {
+  bar.tick()
 
   if (bar.completed) {
-    clearInterval(iv);
+    clearInterval(iv)
   }
-
-}, 100);
+}, 100)

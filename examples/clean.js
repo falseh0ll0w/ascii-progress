@@ -1,22 +1,19 @@
-var ProgressBar = require('../index.js');
+const { ProgressBar } = require('../lib')
 
-var bar = new ProgressBar({
-  clean   : true,
-  schema  : ' [:bar] \n:current/:total \n:percent \n:elapseds :etas',
-  callback: function () {
-    console.log(123);
-  }
-});
+const bar = new ProgressBar({
+  clean: true,
+  schema: ' [:bar] \n:current/:total \n:percent \n:elapseds :etas',
+  callback() {
+    console.log(123)
+  },
+})
 
-
-var iv = setInterval(function () {
-
-  bar.tick();
-  console.log(new Date);
+const iv = setInterval(() => {
+  bar.tick()
+  console.log(new Date())
 
   if (bar.completed) {
-    clearInterval(iv);
-    console.log('completed');
+    clearInterval(iv)
+    console.log('completed')
   }
-
-}, 10);
+}, 10)

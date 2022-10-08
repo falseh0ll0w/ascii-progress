@@ -1,26 +1,25 @@
+const { ProgressBar } = require('../lib')
 
-var ProgressBar = require('../index.js');
-
-var bar = new ProgressBar({
-  schema:' :title [:bar] :percent'
-});
+const bar = new ProgressBar({
+  schema: ' :title [:bar] :percent',
+})
 
 function forward() {
-  bar.tick(1, { title: 'Forward ' });
+  bar.tick(1, { title: 'Forward ' })
   if (bar.current > 60) {
-    backward();
+    backward()
   } else {
-    setTimeout(forward, 20);
+    setTimeout(forward, 20)
   }
 }
 
 function backward() {
-  bar.tick(-1, { title: 'Backward' });
+  bar.tick(-1, { title: 'Backward' })
   if (bar.current === 0) {
-    bar.terminate();
+    bar.terminate()
   } else {
-    setTimeout(backward, 10);
+    setTimeout(backward, 10)
   }
 }
 
-forward();
+forward()

@@ -1,10 +1,15 @@
-# ascii-progress
+<h1 align="center">ascii-progress</h1>
 
-> Ascii progress-bar(s) in the terminal.
+<p align="center"><strong>Ascii progress-bar(s) in the terminal.</strong></p>
 
-[![MIT License](https://img.shields.io/badge/license-MIT_License-green.svg?style=flat-square)](https://github.com/bubkoo/ascii-progress/blob/master/LICENSE)
-[![Package Quality](http://npm.packagequality.com/shield/ascii-progress.svg)](http://packagequality.com/#?package=ascii-progress)
+<p align="center">Fork from <a href="https://github.com/tsayen/dom-to-image" rel="nofollow">dom-to-image</a> with more maintainable code and some new features.</p>
 
+<p align="center">
+<a href="/LICENSE"><img src="https://img.shields.io/github/license/bubkoo/ascii-progress?style=flat-square" alt="MIT License"></a>
+<a href="https://www.typescriptlang.org"><img alt="Language" src="https://img.shields.io/badge/language-TypeScript-blue.svg?style=flat-square"></a>
+<a href="https://github.com/bubkoo/ascii-progress/pulls"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat-square"></a>
+
+</p>
 
 **Feature**:
 
@@ -28,14 +33,14 @@ $ npm install ascii-progress
 > For more usage see the [examples](https://github.com/bubkoo/ascii-progress/blob/master/examples)
 
 ```javascript
-var ProgressBar = require('ascii-progress');
+const { ProgressBar } = require('ascii-progress');
 
-var bar = new ProgressBar({ 
+const bar = new ProgressBar({
     schema: ':bar',
-    total : 10 
+    total : 10,
 });
 
-var iv = setInterval(function () {
+const iv = setInterval(function () {
   bar.tick();
   if (bar.completed) {
     clearInterval(iv);
@@ -46,9 +51,7 @@ var iv = setInterval(function () {
 
 ### Options
 
-These are keys in the options object you can pass to the progress bar along with
-`total` as seen in the example above.
-
+These are keys in the options object you can pass to the progress bar along with `total` as seen in the example above.
 
 - `schema` - template string of the progress bar. Default `" [:bar] :current/:total :percent :elapseds :etas'"`.
 - `total` - total number of ticks to complete. Default `100`.
@@ -62,7 +65,6 @@ These are keys in the options object you can pass to the progress bar along with
 
 
 ### Properties
- 
  - `schema`
  - `total`
  - `current`
@@ -70,27 +72,15 @@ These are keys in the options object you can pass to the progress bar along with
 
 ### Methods
 
-#### `setSchema(schema, refresh/tokens)`
+- `setSchema(schema, refresh/tokens)` - Update the schema of the progress bar. If `refresh` or `tokens` is truely the progress bar will be refreshed.
+- `tick(delta, tokens)` - Update ticks of the progress bar by `delta`, then render the progress bar with optional `tokens`.
+- `update(ratio, tokens)` - Update the progress bar to `ratio` by percentage, then render the progress bar with optional `tokens`.
 
-Update the schema of the progress bar. If `refresh` or `tokens` is truely the progress bar will be refreshed.
-
-#### `tick(delta, tokens)` 
-
-Update ticks of the progress bar by `delta`, then render the progress bar with optional `tokens`.
-
-#### `update(ratio, tokens)` 
-
-Update the progress bar to `ratio` by percentage, then render the progress bar with optional `tokens`.
-
-#### `clear()` 
-
-Clean the progress bar in the terminal.
-
+- `clear()` - Clean the progress bar in the terminal.
 
 ## Schema
 
-The schema defines appearance the progress bar. Few inner tokens and many 
-formatting methods can be used to customer you progress bar.  
+The schema defines appearance the progress bar. Few inner tokens and many formatting methods can be used to customer you progress bar.
 
 ### Tokens
 
@@ -110,9 +100,9 @@ These are tokens you can use in the format of your progress bar.
 You can define custom tokens by adding a `{name: value}` object parameter to your method (`tick()`, `update()`, etc.) calls.
 
 ```javascript
-var bar = new ProgressBar({
+const bar = new ProgressBar({
     schema: ':current: :token1 :token2',
-    total : 3 
+    total : 3,
 });
 bar.tick({
   'token1': "Hello",
@@ -207,7 +197,15 @@ The percentage is green and bold.
 
 ## Contributing
 
-Pull requests and stars are highly welcome.
+Please let us know how can we help. Do check out [issues](https://github.com/bubkoo/ascii-progress/issues) for bug reports or suggestions first.
 
-For bugs and feature requests, please [create an issue](https://github.com/bubkoo/ascii-progress/issues/new).
+To become a contributor, please follow our [contributing guide](/CONTRIBUTING.md).
 
+<a href="https://github.com/bubkoo/ascii-progress/graphs/contributors">
+  <img src="/CONTRIBUTORS.svg" alt="Contributors" width="740" />
+</a>
+
+
+## License
+
+The scripts and documentation in this project are released under the [MIT License](LICENSE)

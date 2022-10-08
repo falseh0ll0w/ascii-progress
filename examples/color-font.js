@@ -1,34 +1,31 @@
-var ProgressBar = require('../index.js');
+const { ProgressBar } = require('../lib')
 
-var bar = new ProgressBar({
-  total: 100
-});
+const bar = new ProgressBar({ total: 100 })
 
-var tokens = ':current.underline.magenta/:total.italic.green :percent.bold.yellow :elapseds.italic.blue :etas.italic.cyan';
+const tokens =
+  ':current.underline.magenta/:total.italic.green :percent.bold.yellow :elapseds.italic.blue :etas.italic.cyan'
 
-var iv = setInterval(function () {
-
-  var completedColor = '';
-  var current        = bar.current;
+const iv = setInterval(() => {
+  let completedColor = ''
+  const current = bar.current
   if (current < 20) {
-    completedColor = 'red';
+    completedColor = 'red'
   } else if (current < 40) {
-    completedColor = 'magenta';
+    completedColor = 'magenta'
   } else if (current < 60) {
-    completedColor = 'yellow';
+    completedColor = 'yellow'
   } else if (current < 80) {
-    completedColor = 'blue';
+    completedColor = 'blue'
   } else if (current < 100) {
-    completedColor = 'green';
+    completedColor = 'green'
   }
 
-  var schema = ' [.white:filled.' + completedColor + ':blank.grey] .white' + tokens;
+  const schema = ` [.white:filled.${completedColor}:blank.grey] .white${tokens}`
 
-  bar.setSchema(schema);
-  bar.tick();
+  bar.setSchema(schema)
+  bar.tick()
 
   if (bar.completed) {
-    clearInterval(iv);
+    clearInterval(iv)
   }
-
-}, 30);
+}, 30)

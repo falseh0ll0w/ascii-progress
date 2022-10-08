@@ -1,15 +1,14 @@
-var ProgressBar = require('../index.js');
+const { ProgressBar } = require('../lib')
 
-var bar = new ProgressBar({
-  schema: ' [:filled.gradient(red,magenta):blank] :current/:total :percent :elapseds :etas'
-});
+const bar = new ProgressBar({
+  schema:
+    ' [:filled.gradient(red,magenta):blank] :current/:total :percent :elapseds :etas',
+})
 
-var iv = setInterval(function () {
-
-  bar.tick();
+const iv = setInterval(() => {
+  bar.tick()
 
   if (bar.completed) {
-    clearInterval(iv);
+    clearInterval(iv)
   }
-
-}, 100);
+}, 100)

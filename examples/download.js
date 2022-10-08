@@ -1,24 +1,23 @@
-var ProgressBar = require('../index.js');
+const { ProgressBar } = require('../lib')
 
-var contentLength = 128 * 1024;
+const contentLength = 128 * 1024
 
-var bar = new ProgressBar({
+const bar = new ProgressBar({
   schema: ' Downloading [:bar] :percent :etas',
-  width : 80,
-  total : contentLength
-});
+  width: 80,
+  total: contentLength,
+})
 
-(function next() {
-
+function next() {
   if (contentLength) {
+    const chunk = Math.round(Math.random() * 10 * 1024)
 
-    var chunk = Math.round(Math.random() * 10 * 1024);
-
-    bar.tick(chunk);
+    bar.tick(chunk)
 
     if (!bar.completed) {
-      setTimeout(next, Math.random() * 1000);
+      setTimeout(next, Math.random() * 1000)
     }
   }
+}
 
-})();
+next()
