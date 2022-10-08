@@ -2,8 +2,6 @@
 
 <p align="center"><strong>Ascii progress-bar(s) in the terminal.</strong></p>
 
-<p align="center">Fork from <a href="https://github.com/tsayen/dom-to-image" rel="nofollow">dom-to-image</a> with more maintainable code and some new features.</p>
-
 <p align="center">
 <a href="/LICENSE"><img src="https://img.shields.io/github/license/bubkoo/ascii-progress?style=flat-square" alt="MIT License"></a>
 <a href="https://www.typescriptlang.org"><img alt="Language" src="https://img.shields.io/badge/language-TypeScript-blue.svg?style=flat-square"></a>
