@@ -17,7 +17,7 @@
 - Highly customizable
 
 
-![snapshot](https://raw.githubusercontent.com/bubkoo/ascii-progress/master/snapshot.gif)
+![snapshot](snapshot.gif)
 
 
 ## Install
